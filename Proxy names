@@ -1,0 +1,13 @@
+
+Interface Name
+
+FlightSeatAvailabilityQuery_In
+
+<n0:FlightSeatAvailabilityQuery xmlns:n0="http://sap.com/xi/XI/Demo/Airline">
+ <FlightID>
+  <AirlineID>AC</AirlineID>
+  <ConnectionID>820</ConnectionID>
+  <FlightDate>2002-12-20</FlightDate>
+ </FlightID>
+</n0:FlightSeatAvailabilityQuery>
+
