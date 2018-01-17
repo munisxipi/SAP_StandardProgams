@@ -1,13 +1,61 @@
 
 Interface Name
 
-FlightSeatAvailabilityQuery_In
+Configure asynchronous service without Mapping.
 
-<n0:FlightSeatAvailabilityQuery xmlns:n0="http://sap.com/xi/XI/Demo/Airline">
+FlightSeatAvailabilityQuery_In
+http://sap.com/xi/XI/Demo/Airline
+
+SOAP:
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:t029="yournamespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <n0:FlightSeatAvailabilityQuery xmlns:n0="http://sap.com/xi/XI/Demo/Airline">
+         <FlightID>
+            <AirlineID>A4</AirlineID>
+            <ConnectionID>820</ConnectionID>
+            <FlightDate>2002-12-20</FlightDate>
+         </FlightID>
+      </n0:FlightSeatAvailabilityQuery>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+response
+
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP:Header/>
+   <SOAP:Body xmlns:t029="yournamesace">
+      <n0:FlightSeatAvailabilityResponse xmlns:n0="http://sap.com/xi/XI/Demo/Airline" xmlns:prx="urn:sap.com:proxy:YourID:/1SAI/TASCE50003356A63C18AD50:750">
+         <EconomyMaxSeats>320</EconomyMaxSeats>
+         <EconomyFreeSeats>344</EconomyFreeSeats>
+         <BusinessMaxSeats>20</BusinessMaxSeats>
+         <BusinessFreeSeats>19</BusinessFreeSeats>
+         <FirstMaxSeats>0</FirstMaxSeats>
+         <FirstFreeSeats>0</FirstFreeSeats>
+      </n0:FlightSeatAvailabilityResponse>
+   </SOAP:Body>
+</SOAP:Envelope>
+
+
+
+
+Rest
+
  <FlightID>
   <AirlineID>AC</AirlineID>
-  <ConnectionID>820</ConnectionID>
+  <ConnectionID>82</ConnectionID>
   <FlightDate>2002-12-20</FlightDate>
  </FlightID>
-</n0:FlightSeatAvailabilityQuery>
 
+out
+
+<n0:FlightSeatAvailabilityResponse xmlns:n0="http://sap.com/xi/XI/Demo/Airline" xmlns:prx="urn:sap.com:proxy:YourID:/1SAI/TASCE50003356A63C18AD50:750">
+    <EconomyMaxSeats>320</EconomyMaxSeats>
+    <EconomyFreeSeats>344</EconomyFreeSeats>
+    <BusinessMaxSeats>20</BusinessMaxSeats>
+    <BusinessFreeSeats>19</BusinessFreeSeats>
+    <FirstMaxSeats>0</FirstMaxSeats>
+    <FirstFreeSeats>0</FirstFreeSeats>
+</n0:FlightSeatAvailabilityResponse>
